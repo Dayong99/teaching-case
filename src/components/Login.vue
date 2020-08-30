@@ -11,6 +11,7 @@
         <!--          用户名-->
         <el-form-item prop="username">
           <el-input v-model="loginForm.username"
+                    class="myClass"
                     prefix-icon="iconfont icon-user"></el-input>
         </el-form-item>
         <!--          密码-->
@@ -75,7 +76,18 @@ export default {
   }
 }
 </script>
-
+<style>
+.el-input__inner{
+  background-color: #103156;
+  padding-top:22px!important;
+  padding-bottom:22px!important;
+  border-radius:0!important;
+  border-top-width: 0px!important;
+  border-left-width: 0px!important;
+  border-right-width: 0px!important;
+  border-bottom-width: 1px!important;
+}
+</style>
 <style lang="less" scoped>
 .login_container {
   background-color: #103156;
@@ -92,37 +104,21 @@ export default {
   top: 50%;
   transform: translate(-120%, -50%);
 
-  //.avatar_box {
-  //  height: 100px;
-  //  width: 100px;
-  //  border: 1px solid #eee;
-  //  border-radius: 50%;
-  //  padding: 10px;
-  //  box-shadow: 0 0 10px #ddd;
-  //  position: absolute;
-  //  left: 50%;
-  //  transform: translate(-50%, -50%);
-  //  background-color: #fff;
-  //
-  //  img {
-  //    width: 100%;
-  //    height: 100px;
-  //    border-radius: 50%;
-  //    background-color: #eee;
-  //  }
-  //}
-
   .login_form {
     position: absolute;
     bottom: 0;
     width: 100%;
     padding: 0 20px;
     box-sizing: border-box;
+
   }
 
   .btns {
     display: flex;
     justify-content: flex-end;
   }
+
+
 }
+
 </style>
