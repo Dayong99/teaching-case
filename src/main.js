@@ -4,6 +4,9 @@ import router from './router'
 import './plugins/element.js'
 // 导入全局样式表
 import './assets/css/global.css'
+// 导入阿里图标库
+import '../src/assets/iconfont/iconfont.css';
+
 
 Vue.config.productionTip = false
 

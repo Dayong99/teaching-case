@@ -2,7 +2,7 @@
   <div class="login_container">
     <div class="login_box">
       <!--        登陆表单区域-->
-      <div>案例教学系统</div>
+      <div class="system-title">案例教学系统</div>
       <el-form ref="loginFormRef"
                :model="loginForm"
                :rules="loginFromRules"
@@ -11,14 +11,18 @@
         <!--          用户名-->
         <el-form-item prop="username">
           <el-input v-model="loginForm.username"
-                    class="myClass"
-                    prefix-icon="iconfont icon-user"></el-input>
+                    class="myClass">
+            <template slot="prepend">
+              <img src="../assets/iconfont/用户 (1).png">
+            </template>
+          </el-input>
         </el-form-item>
         <!--          密码-->
         <el-form-item prop="password">
           <el-input v-model="loginForm.password"
-                    prefix-icon="iconfont icon-3702mima"
-                    type="password"></el-input>
+                    prefix-icon="icon iconfont icon-weibiaoti--"
+                    type="password">
+          </el-input>
           <!--            按钮区域-->
         </el-form-item>
         <el-form-item class="btns">
@@ -38,8 +42,8 @@ export default {
     return {
       // 这是登陆表单的数据绑定对象
       loginForm: {
-        username: 'admin',
-        password: '123456'
+        username: '请输入用户名',
+        password: '请输入密码'
       },
       // 这是表单的验证规则对象
       loginFromRules: {
@@ -77,8 +81,18 @@ export default {
 }
 </script>
 <style>
+.el-input-group__prepend {
+  background-color:transparent!important;
+  top:8px!important;
+  right: 23px!important;
+  border-radius:0!important;
+  border-top-width: 0px!important;
+  border-left-width: 0px!important;
+  border-right-width: 0px!important;
+  border-bottom-width: 0px!important;
+}
 .el-input__inner{
-  background-color: #103156;
+  background-color:transparent!important;
   padding-top:22px!important;
   padding-bottom:22px!important;
   border-radius:0!important;
@@ -86,18 +100,37 @@ export default {
   border-left-width: 0px!important;
   border-right-width: 0px!important;
   border-bottom-width: 1px!important;
+  border-bottom-color: white!important;
 }
+
 </style>
 <style lang="less" scoped>
+.system-title {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 12px;
+  left: 20px;
+}
+/*// 阿里字体图标设置*/
+.icon, .iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .login_container {
   background-color: #103156;
   height: 100%;
 }
 
 .login_box {
-  width: 450px;
+  width: 280px;
   height: 300px;
-  background-color: #fff;
   border-radius: 3px;
   position: absolute;
   left: 100%;
